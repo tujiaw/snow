@@ -22,7 +22,7 @@ export default class LifeList extends React.Component {
         background={TouchableNativeFeedback.SelectableBackground()}
       >
         <View style={styles.lifeItem}>
-          <Image source={{uri: item.img}} style={{ width: 80, height: 80 }} />
+          <Image source={{uri: item.img}} style={styles.lifeItemImage} />
           <View style={styles.lifeItemRight}>
             <Text style={styles.lifeItemTitle}>{item.title}</Text>
             <Text style={styles.lifeItemDesc}>{item.desc}</Text>
@@ -44,6 +44,10 @@ export default class LifeList extends React.Component {
               key: 2, title: '来福岛笑话', page: 'LaifuJokePage', 
               img: 'https://www.showapi.com/images/apiLogo/20170502/5423acc973f41c03173a186a_0c511889c0c3493f89fe4bd6fe17c535.png',
               desc: '来福岛爆笑娱乐网创建于2000年，是国内较早兴起的中文幽默类网站，经过数年的努力，目前网站平均每天浏览量已达到上百万人。接口每天更新20条，不会出现重复的情况。'
+            }, {
+              key: 3, title: '新闻热搜榜', page: 'RealTimeNewsSearchRank',
+              img: 'https://www.showapi.com/images/apiLogo/20150828/55c20f696e363a0000b115a6_0a47f47621d345fcafc48d2811263e26.jpg',
+              desc: '新闻热词，热搜排行榜，周新闻排行与实时新闻。'
             }]}
           renderItem={ this.renderLifeItem }
         />
@@ -56,7 +60,14 @@ const styles = StyleSheet.create({
   lifeItem: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginLeft: 5,
+    marginRight: 5,
+  },
+  lifeItemImage: {
+    width: 80, 
+    height: 80,
+    borderRadius: 5,
   },
   lifeItemRight: {
     flex: 1,
