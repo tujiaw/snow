@@ -38,6 +38,7 @@ export function showapi(mainUrl, appParams) {
       fetch(url)
       .then((response) => response.json())
       .then((json) => {
+          console.log(json)
         resolve(json);
       })
       .catch((err) => {

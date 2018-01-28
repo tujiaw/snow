@@ -19,3 +19,7 @@ module.exports.requestCurrentWeekNewsSearchBank = () => {
 module.exports.requestHanzi2pinyin = (text) => {
   return showapi('http://route.showapi.com/1486-1', {keywords: text})
 }
+
+module.exports.requestAlexaRank = (name) => {
+  return showapi('http://route.showapi.com/24-1', {name: name})
+}

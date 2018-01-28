@@ -14,18 +14,18 @@ export default class ApiList extends React.Component {
     navigation.navigate(page)
   }
 
-  renderLifeItem = ({item}) => {
+  renderApiItem = ({item}) => {
     return (
       <TouchableNativeFeedback 
         key={item.key}
         onPress={this.onItemPress.bind(this, item.page)}
         background={TouchableNativeFeedback.SelectableBackground()}
       >
-        <View style={styles.lifeItem}>
-          <Image source={{uri: item.img}} style={styles.lifeItemImage} />
-          <View style={styles.lifeItemRight}>
-            <Text style={styles.lifeItemTitle}>{item.title}</Text>
-            <Text style={styles.lifeItemDesc}>{item.desc}</Text>
+        <View style={styles.apiItem}>
+          <Image source={{uri: item.img}} style={styles.apiItemImage} />
+          <View style={styles.apiItemRight}>
+            <Text style={styles.apiItemTitle}>{item.title}</Text>
+            <Text style={styles.apiItemDesc}>{item.desc}</Text>
           </View>
         </View>
       </TouchableNativeFeedback>
@@ -39,7 +39,7 @@ export default class ApiList extends React.Component {
       <View style={styles.root}>
         <FlatList 
           data={this.props.list}
-          renderItem={ this.renderLifeItem }
+          renderItem={ this.renderApiItem }
         />
       </View>
     )
@@ -50,29 +50,29 @@ const styles = StyleSheet.create({
   root: {
     marginTop: 10,
   },
-  lifeItem: {
+  apiItem: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     marginLeft: 5,
     marginRight: 5,
   },
-  lifeItemImage: {
+  apiItemImage: {
     width: 80, 
     height: 80,
     borderRadius: 5,
   },
-  lifeItemRight: {
+  apiItemRight: {
     flex: 1,
     flexDirection: 'column',
     marginLeft: 10,
     marginRight: 10,
   },
-  lifeItemTitle: {
+  apiItemTitle: {
     fontSize: 15,
     fontWeight: 'bold'
   },
-  lifeItemDesc: {
+  apiItemDesc: {
     fontSize: 12,
     color: 'gray'
   }
