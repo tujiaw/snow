@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   apiItemImage: {
-    width: 80, 
-    height: 80,
+    width: 70, 
+    height: 70,
     borderRadius: 5,
   },
   apiItemRight: {

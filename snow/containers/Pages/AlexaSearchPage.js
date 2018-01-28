@@ -47,6 +47,8 @@ export default class AlexaSearchPage extends React.Component {
         <TextInput 
           keyboardType='url'
           maxLength={100}
+          multiline={true}
+          numberOfLines={2}
           placeholder='如：baidu.com'
           onChangeText={(text) => this.setState({text})}
         />

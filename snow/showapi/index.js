@@ -23,3 +23,7 @@ module.exports.requestHanzi2pinyin = (text) => {
 module.exports.requestAlexaRank = (name) => {
   return showapi('http://route.showapi.com/24-1', {name: name})
 }
+
+module.exports.requestWechatArticle = (word, page) => {
+  return showapi('http://route.showapi.com/181-1', {word: word, page: page, num: 20})
+}
