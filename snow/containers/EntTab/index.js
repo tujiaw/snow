@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, Text, Button, Alert } from 'react-native'
 
-class MovieTab extends React.Component {
+class EntTab extends React.Component {
   render() {
     const { navigation } = this.props
     return (
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default MovieTab
+export default EntTab

@@ -1,26 +1,14 @@
 const md5 = require('md5');
+const moment = require('moment')
 
-function leftPad(str, count) {
-    return Array(Math.max(0, count - ('' + str).length + 1)).join(0) + str;
-}
+const APPID = '17262'
+const SECRET = '21b693f98bd64e71a9bdbb5f7c76659c'
 
-function curDate() {
-    var date = new Date();
-    return leftPad(date.getFullYear(), 4) +
-          leftPad(date.getMonth() + 1, 2) +
-          leftPad(date.getDate(), 2) +
-          leftPad(date.getHours() + 8, 2) +
-          leftPad(date.getMinutes(), 2) +
-          leftPad(date.getSeconds(), 2);
-}
-
-export function showapi(mainUrl, appId, appParams) {
+export function showapi(mainUrl, appParams) {
     var url = new String(mainUrl + '?');
     var params = {
-        showapi_appid: appId,
-        showapi_timestamp: curDate(),
-        showapi_sign_method: 'md5',
-        showapi_res_gzip: 1
+        showapi_appid: APPID,
+        //showapi_timestamp: moment().format('YYYYMMDDHHmmss'),
     };
 
     appParams = appParams || {};
@@ -38,8 +26,8 @@ export function showapi(mainUrl, appId, appParams) {
     keys.map(function(value) {
         sortResult = sortResult + value + params[value];
     });
-    var secret = '21b693f98bd64e71a9bdbb5f7c76659c';
-    var sign = md5(sortResult + secret);
+    console.log(sortResult)
+    var sign = md5(sortResult + SECRET);
     keys.map(function(value) {
         url = url + value + '=' + params[value] + '&';
     });

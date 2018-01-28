@@ -4,8 +4,8 @@ import { TabNavigator } from 'react-navigation'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LifeTab from './containers/LifeTab'
-import BookTab from './containers/BookTab'
-import MovieTab from './containers/MovieTab'
+import DevTab from './containers/DevTab'
+import EntTab from './containers/EntTab'
 
 const App = TabNavigator(
   {
@@ -15,16 +15,16 @@ const App = TabNavigator(
         tabBarLabel: '生活',
       }
     },
-    Book: {
-      screen: BookTab,
+    Dev: {
+      screen: DevTab,
       navigationOptions: {
-        tabBarLabel: 'Book',
+        tabBarLabel: '开发',
       }
     },
-    Movie: {
-      screen: MovieTab,
+    Ent: {
+      screen: EntTab,
       navigationOptions: {
-        tabBarLabel: 'Movie'
+        tabBarLabel: '娱乐'
       }
     }
   }, {
