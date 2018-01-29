@@ -26,7 +26,6 @@ export default class AlexaSearchPage extends React.Component {
           localRank: body.local_rank || '无',
           globalRank: body.global_rank || '无',
         })
-        console.log(newResultList)
         this.setState({
           resultList: newResultList
         })

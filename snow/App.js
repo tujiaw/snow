@@ -16,7 +16,7 @@ const MainTab = TabNavigator(
         tabBarIcon: ({ tintColor, focused }) => (
           <Ionicons
             name={focused ? 'ios-home' : 'ios-home-outline'}
-            size={26}
+            size={20}
             style={{ color: tintColor }}
           />
         )
@@ -29,7 +29,7 @@ const MainTab = TabNavigator(
         tabBarIcon: ({ tintColor, focused }) => (
           <Ionicons
             name={focused ? 'ios-bug' : 'ios-bug-outline'}
-            size={26}
+            size={20}
             style={{ color: tintColor }}
           />
         )
@@ -42,7 +42,7 @@ const MainTab = TabNavigator(
         tabBarIcon: ({ tintColor, focused }) => (
           <Ionicons
             name={focused ? 'ios-film' : 'ios-film-outline'}
-            size={26}
+            size={20}
             style={{ color: tintColor }}
           />
         )
@@ -52,6 +52,12 @@ const MainTab = TabNavigator(
     tabBarPosition: 'bottom',
     tabBarOptions: {
       showIcon: true,
+      labelStyle: {
+        fontSize: 10,
+      },
+      style: {
+        height: 58,
+      },
     }
   }
 )
@@ -94,10 +100,6 @@ class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  icon: { 
-    width: 26, 
-    height: 26 
-  }
 })
 
 export default App

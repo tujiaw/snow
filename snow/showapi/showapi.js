@@ -26,7 +26,6 @@ export function showapi(mainUrl, appParams) {
     keys.map(function(value) {
         sortResult = sortResult + value + params[value];
     });
-    console.log(sortResult)
     var sign = md5(sortResult + SECRET);
     keys.map(function(value) {
         url = url + value + '=' + params[value] + '&';
@@ -38,7 +37,6 @@ export function showapi(mainUrl, appParams) {
       fetch(url)
       .then((response) => response.json())
       .then((json) => {
-          console.log(json)
         resolve(json);
       })
       .catch((err) => {

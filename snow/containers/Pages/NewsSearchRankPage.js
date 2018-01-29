@@ -55,7 +55,6 @@ export default class NewsSearchRankPage extends React.Component {
   }
 
   _onItemPress = (url) => {
-    console.log(url)
     const { navigation } = this.props
     navigation.navigate('WebViewPage', { url: url })
   }
